@@ -34,6 +34,10 @@ for (const f of files) {
   };
 }
 
+if (!version) {
+  throw new Error('No binaries found');
+}
+
 pkgJson.version = version;
 pkgJson.xpack.binaries.baseUrl = pkgJson.xpack.binaries.rootUrl + '/v' + version
 

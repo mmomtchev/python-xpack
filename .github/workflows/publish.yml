@@ -61,6 +61,8 @@ jobs:
         with:
           submodules: true
       - uses: actions/download-artifact@v4
+        with:
+          path: ${{ github.workspace }}
       - name: Update package.json
         run: node update-package.mjs
       - uses: EndBug/add-and-commit@v9
