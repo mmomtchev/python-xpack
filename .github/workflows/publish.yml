@@ -39,8 +39,9 @@ jobs:
         shell: bash
         run: node -p "'ARCH=' + os.platform() + '-' + os.arch()" >> $GITHUB_ENV
       - name: Pack (Windows)
-        shell: bash
-        run: zip -r9 python-xpack-${{ inputs.version }}-${{ env.ARCH }}.zip ${{ github.workspace }}\content
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -r9 python-xpack-${{ inputs.version }}-${{ env.ARCH }}.zip ${{ github.workspace }}\content
         if: runner.os == 'Windows'
       - name: Pack (POSIX)
         shell: bash
