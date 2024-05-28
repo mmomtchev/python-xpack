@@ -26,10 +26,8 @@ jobs:
         with:
           submodules: true
       - name: Get Python version from package.json
-        uses: sergeysova/jq-action@v2
+        run: node -p "require('./package.json').xpack.properties.versionPython" >> $GITHUB_OUTPUT
         id: version
-        with:
-          cmd: 'jq .xpack.properties.versionPython package.json -r'
       - name: Cache Python dist files
         id: python-dist
         uses: actions/cache@v4
