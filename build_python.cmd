@@ -1,0 +1,9 @@
+set mypath=%~dp0
+cd %mypath:~0,-1%
+
+set PYTHON_DIST=%mypath:~0,-1%\dist
+set PYTHON_BUILD=%mypath:~0,-1%\build
+set PYTHON_VERSION=%1
+set PYTHON_DEST=%mypath:~0,-1%\content
+cd deps\static-portable-python
+build_python.bat %PYTHON_DEST%

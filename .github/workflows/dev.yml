@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  build_python:
+    runs-on: ${{ matrix.platform }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - ubuntu-22.04
+          - macos-11
+          - macos-14
+          - windows-2019
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Cache Python dist files
+        id: python-dist
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/dist
+          key: python-dist
+          enableCrossOsArchive: true
+      - run: npm install
+      - run: npx xpm run build
+      - name: Test (Windows)
+        run: ${{ github.workspace }}/content/python -E -s -c "import sys; print(sys.path)"
+        if: runner.os == 'Windows'
+      - name: Test (POSIX)
+        run: ${{ github.workspace }}\content\python -E -s -c "import sys; print(sys.path)"
+        if: runner.os != 'Windows'

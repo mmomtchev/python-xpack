@@ -1,0 +1,45 @@
+{
+  "name": "python-xpack",
+  "version": "1.0.0",
+  "description": "A binary xPack with a standalone Python distribution",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmomtchev/python-xpack.git"
+  },
+  "keywords": [
+    "python",
+    "xpack"
+  ],
+  "author": "Momtchil Momtchev <momtchil@momtchev.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmomtchev/python-xpack/issues"
+  },
+  "homepage": "https://github.com/mmomtchev/python-xpack#readme",
+  "xpack": {
+    "minimumXpmRequired": "0.16.3",
+    "binaries": {
+      "destination": "./.content",
+      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v1.3.2-1",
+      "skip": 1
+    },
+    "bin": {
+      "python": "./.content/python"
+    },
+    "properties": {
+      "versionPython": "3.12.3",
+      "commandBuild": {
+        "win32": "build_python.cmd {{ properties.versionPython }}",
+        "linux": "bash build_python.sh {{ properties.versionPython }}",
+        "darwin": "bash build_python.sh {{ properties.versionPython }}"
+      }
+    },
+    "actions": {
+      "build": "{{ properties.commandBuild[os.platform] }}"
+    }
+  },
+  "dependencies": {
+    "xpm": "^0.19.1"
+  }
+}
