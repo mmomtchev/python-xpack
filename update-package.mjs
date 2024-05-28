@@ -6,7 +6,9 @@ import * as crypto from 'node:crypto';
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const pkgJson = JSON.parse(await fs.readFile(path.resolve(dir, 'package.json'), 'utf-8'));
 const files = await fs.readdir(dir);
-const re = new RegExp(`${pkgJson.name}-([0-9]+\\.[0-9]+\\.[0-9]+-[0-9]+)-([\\w\\-]+)-([\\w\\-]+)`);
+const nameSplit = pkgJson.name.split('/');
+const name = nameSplit[nameSplit.length - 1];
+const re = new RegExp(`${name}-([0-9]+\\.[0-9]+\\.[0-9]+-[0-9]+)-([\\w\\-]+)-([\\w\\-]+)`);
 let version;
 for (const f of files) {
   const r = re.exec(f);
@@ -35,7 +37,7 @@ for (const f of files) {
 }
 
 if (!version) {
-  throw new Error('No binaries found');
+  throw new Error(`No binaries found matching ${re.toString()}`);
 }
 
 pkgJson.version = version;

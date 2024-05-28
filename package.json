@@ -1,6 +1,6 @@
 {
-  "name": "python-xpack",
-  "version": "3.12.3-1",
+  "name": "@mmomtchev/python-xpack",
+  "version": "3.2.13-1",
   "description": "A binary xPack with a standalone Python distribution",
   "scripts": {
     "postversion": "git push && git push --tags && node ./publish.mjs"
@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/mmomtchev/python-xpack#readme",
   "xpack": {
-    "minimumXpmRequired": "0.16.3",
+    "minimumXpmRequired": "0.19.1",
     "binaries": {
       "destination": "./.content",
       "rootUrl": "https://github.com/mmomtchev/python-xpack/releases/download",
-      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v3.12.3-1",
+      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v3.2.13-1",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
@@ -36,12 +36,12 @@
           "sha256": "c5bf96dbdbc431cb2235bd60095be7d346dd351ba3b2e8046b39d04f8ce9b25a"
         },
         "linux-x64": {
-          "fileName": "python-xpack-3.12.3-1-linux-x64.tar.gz",
-          "sha256": "2ce8bff865477ff03596ea77ec0744b89e2ed10f33e8dd2db1775f29719182ea"
+          "fileName": "python-xpack-3.2.13-1-linux-x64.tar.gz",
+          "sha256": "8cb6829242a1722dbb5bc746cc8728414fff9d67f6b4fd945f2c9fbfaf2bd9c1"
         },
         "win32-x64": {
-          "fileName": "python-xpack-3.12.3-1-win32-x64.zip",
-          "sha256": "6000745c646335a5e0399949bc4b74a05de7deebc7f5af381833c912f777d2e9"
+          "fileName": "python-xpack-3.2.13-1-win32-x64.zip",
+          "sha256": "458f4d5cc7cda4e5109d9dbe6355e89e0e88f6bd54a18674ddeb0ef2f1b5292d"
         }
       }
     },

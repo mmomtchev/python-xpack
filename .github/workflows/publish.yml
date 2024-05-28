@@ -74,11 +74,11 @@ jobs:
           add: package.json
           message: 'update package.json for ${{ inputs.version }}'
           push: true
-          tag: ${{ inputs.version }}
+          tag: v${{ inputs.version }}
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: python-xpack-*
           draft: true
-          tag: ${{ inputs.version }}
+          tag: v${{ inputs.version }}
 
