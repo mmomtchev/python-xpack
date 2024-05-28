@@ -32,9 +32,5 @@ jobs:
           enableCrossOsArchive: true
       - run: npm install
       - run: npx xpm run build
-      - name: Test (Windows)
+      - name: Test
         run: ${{ github.workspace }}/content/python -E -s -c "import sys; print(sys.path)"
-        if: runner.os == 'Windows'
-      - name: Test (POSIX)
-        run: ${{ github.workspace }}\content\python -E -s -c "import sys; print(sys.path)"
-        if: runner.os != 'Windows'

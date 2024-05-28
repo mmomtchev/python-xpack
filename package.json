@@ -1,8 +1,10 @@
 {
   "name": "python-xpack",
-  "version": "1.0.0",
+  "version": "3.2.13-1",
   "description": "A binary xPack with a standalone Python distribution",
-  "scripts": {},
+  "scripts": {
+    "postversion": "git push && git push --tags && node ./publish.mjs"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mmomtchev/python-xpack.git"
@@ -21,8 +23,11 @@
     "minimumXpmRequired": "0.16.3",
     "binaries": {
       "destination": "./.content",
-      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v1.3.2-1",
-      "skip": 1
+      "rootUrl": "https://github.com/mmomtchev/python-xpack/releases/download",
+      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v3.2.13-1",
+      "skip": 1,
+      "platforms": {
+      }
     },
     "bin": {
       "python": "./.content/python"
