@@ -40,11 +40,11 @@ jobs:
         run: node -p "'ARCH=' + os.platform() + '-' + os.arch()" >> $GITHUB_ENV
       - name: Pack (Windows)
         shell: bash
-        run: 7z a python-xpack-${{ inputs.version }}-${{ env.ARCH }}.zip ${{ github.workspace }}\content
+        run: 7z a python-xpack-${{ inputs.version }}-${{ env.ARCH }}.zip content
         if: runner.os == 'Windows'
       - name: Pack (POSIX)
         shell: bash
-        run: tar -zcvf python-xpack-${{ inputs.version }}-${{ env.ARCH }}.tar.gz ${{ github.workspace }}/content
+        run: tar -zcvf python-xpack-${{ inputs.version }}-${{ env.ARCH }}.tar.gz content
         if: runner.os != 'Windows'
       - uses: actions/upload-artifact@v4
         with:
