@@ -80,4 +80,5 @@ jobs:
         with:
           artifacts: python-xpack-*
           draft: true
+          tag: ${{ inputs.version }}
 
