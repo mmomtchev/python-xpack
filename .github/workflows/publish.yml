@@ -25,9 +25,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
-      - name: Get Python version from package.json
-        run: node -p "require('./package.json').xpack.properties.versionPython" >> $GITHUB_OUTPUT
+      - name: Get Python version and Node.js arch name
         id: version
+        shell: bash
+        run: |
+          node -p "'python_version=' + require('./package.json').xpack.properties.versionPython" >> $GITHUB_OUTPUT
+          node -p "'arch=' + os.platform() + '-' + os.arch()" >> $GITHUB_OUTPUT
       - name: Cache Python dist files
         id: python-dist
         uses: actions/cache@v4
@@ -39,23 +42,19 @@ jobs:
       - run: npx xpm run build
       - name: Test
         run: ${{ github.workspace }}/content/python -E -s -c "import sys; print(sys.path)"
-      - name: Set arch name from Node.js
-        shell: bash
-        id: arch
-        run: node -p "os.platform() + '-' + os.arch()" >> $GITHUB_OUTPUT
       - name: Pack (Windows)
         shell: bash
-        run: 7z a python-xpack-${{ steps.version.outputs.value }}-${{ inputs.build }}-${{ steps.arch.outputs.value }}.zip content
+        run: 7z a python-xpack-${{ steps.version.outputs.python_version }}-${{ inputs.build }}-${{ steps.version.outputs.arch }}.zip content
         if: runner.os == 'Windows'
       - name: Pack (POSIX)
         shell: bash
-        run: tar -zcvf python-xpack-${{ steps.version.outputs.value }}-${{ inputs.build }}-${{ steps.arch.outputs.value }}.tar.gz content
+        run: tar -zcvf python-xpack-${{ steps.version.outputs.python_version }}-${{ inputs.build }}-${{ steps.version.outputs.arch }}.tar.gz content
         if: runner.os != 'Windows'
       - uses: actions/upload-artifact@v4
         with:
-          name: binary-${{ steps.arch.outputs.value }}
+          name: binary-${{ steps.version.outputs.arch }}
           path: python-xpack-*
-      
+
 
   create_release:
     needs: build_python
@@ -67,11 +66,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
-      - name: Get Python version from package.json
-        uses: sergeysova/jq-action@v2
+      - name: Get Python version
         id: version
-        with:
-          cmd: 'jq .xpack.properties.versionPython package.json -r'
+        shell: bash
+        run: |
+          node -p "'python_version=' + require('./package.json').xpack.properties.versionPython" >> $GITHUB_OUTPUT
       - uses: actions/download-artifact@v4
         with:
           path: ${{ github.workspace }}
@@ -82,13 +81,13 @@ jobs:
         with:
           default_author: github_actions
           add: package.json
-          message: 'update package.json for ${{ steps.version.outputs.value }}-${{ inputs.build }}'
+          message: 'update package.json for ${{ steps.version.outputs.python_version }}-${{ inputs.build }}'
           push: true
-          tag: v${{ steps.version.outputs.value }}-${{ inputs.build }}
+          tag: v${{ steps.version.outputs.python_version }}-${{ inputs.build }}
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: python-xpack-*
           draft: true
-          tag: v${{ steps.version.outputs.value }}-${{ inputs.build }}
+          tag: v${{ steps.version.outputs.python_version }}-${{ inputs.build }}
 
