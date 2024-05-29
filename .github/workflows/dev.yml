@@ -33,4 +33,4 @@ jobs:
       - run: npm install
       - run: npx xpm run build
       - name: Test
-        run: ${{ github.workspace }}/content/python -E -s -c "import sys; print(sys.path)"
+        run: npx xpm run test

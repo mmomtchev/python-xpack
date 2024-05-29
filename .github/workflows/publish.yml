@@ -41,7 +41,7 @@ jobs:
       - run: npm install
       - run: npx xpm run build
       - name: Test
-        run: ${{ github.workspace }}/content/python -E -s -c "import sys; print(sys.path)"
+        run: npx xpm run test
       - name: Pack (Windows)
         shell: bash
         run: 7z a python-xpack-${{ steps.version.outputs.python_version }}-${{ inputs.build }}-${{ steps.version.outputs.arch }}.zip content
