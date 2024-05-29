@@ -58,7 +58,7 @@
     },
     "actions": {
       "build": "{{ properties.commandBuild[os.platform] }}",
-      "test": ".{{ path.sep }}content{{ path.sep }}python -E -s -c 'import sys; print(sys.path)'"
+      "test": ".{{ path.sep }}content{{ path.sep }}python -E -s test.py"
     }
   },
   "dependencies": {
