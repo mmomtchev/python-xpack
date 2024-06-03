@@ -1,3 +1,6 @@
+# 3.10.14-1 2024-06-03
+  Release with Python 3.10.14
+
 # 3.12.3-2 2024-05-29
   Link gettext statically on macOS
 
