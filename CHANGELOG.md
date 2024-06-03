@@ -1,3 +1,6 @@
+# 3.10.14-2 2024-06-03
+  * Fix the `ssl` module
+
 # 3.10.14-1 2024-06-03
   * Release with Python 3.10.14
 

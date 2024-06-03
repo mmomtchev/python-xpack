@@ -58,7 +58,10 @@
     },
     "actions": {
       "build": "{{ properties.commandBuild[os.platform] }}",
-      "test": ".{{ path.sep }}content{{ path.sep }}python -E -s test.py"
+      "test": [
+        ".{{ path.sep }}content{{ path.sep }}python -E -s test.py",
+        ".{{ path.sep }}content{{ path.sep }}python -E -s -m pip install numpy"
+      ]
     }
   },
   "dependencies": {
