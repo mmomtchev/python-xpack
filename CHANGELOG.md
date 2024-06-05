@@ -1,3 +1,6 @@
+# 3.10.14-3 2024-06-03
+  * Provide both `python` and `python3` executable to satisfy every possible taste
+
 # 3.10.14-2 2024-06-03
   * Fix the `ssl` module
 

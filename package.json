@@ -46,7 +46,8 @@
       }
     },
     "bin": {
-      "python": "./.content/python"
+      "python": "./.content/python",
+      "python3": "./.content/python"
     },
     "properties": {
       "versionPython": "3.10.14",
