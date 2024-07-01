@@ -1,3 +1,7 @@
+# 3.10.14-4 2024-07-01
+  * Fix and test all compression modules on all platforms (`lzma` was missing on macOS arm64)
+  * Drop macOS 11 support
+
 # 3.10.14-3 2024-06-03
   * Provide both `python` and `python3` executable to satisfy every possible taste
 
