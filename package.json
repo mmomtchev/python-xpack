@@ -1,6 +1,6 @@
 {
   "name": "@mmomtchev/python-xpack",
-  "version": "3.10.14-4",
+  "version": "3.10.14-5",
   "description": "A binary xPack with a standalone Python distribution",
   "scripts": {
     "postversion": "git push && git push --tags && node ./publish.mjs"
@@ -24,24 +24,24 @@
     "binaries": {
       "destination": "./.content",
       "rootUrl": "https://github.com/mmomtchev/python-xpack/releases/download",
-      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v3.10.14-4",
+      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v3.10.14-5",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "python-xpack-3.10.14-4-darwin-arm64.tar.gz",
-          "sha256": "d652b98b9ebf99752b612c8c8b76d895b70e5e7ce6d2cf5ae16938d4e6bb3104"
+          "fileName": "python-xpack-3.10.14-5-darwin-arm64.tar.gz",
+          "sha256": "8d6d9d88b78b309e24ecdd3a6f8c03e4cc4fd1aba2c8b2755c386b5841992388"
         },
         "darwin-x64": {
-          "fileName": "python-xpack-3.10.14-4-darwin-x64.tar.gz",
-          "sha256": "e474bb45e8cdbc637828f71fc391ae82278469e1d769127dcc82bd76024ced31"
+          "fileName": "python-xpack-3.10.14-5-darwin-x64.tar.gz",
+          "sha256": "93bd937d2a341c630828e961e72ddf0d8980d2c6656f04d0945481c960c9927b"
         },
         "linux-x64": {
-          "fileName": "python-xpack-3.10.14-4-linux-x64.tar.gz",
-          "sha256": "30c34bcec8def13e95a030acce6c92e1c5b0c12d66244bf1a7865f4408f84713"
+          "fileName": "python-xpack-3.10.14-5-linux-x64.tar.gz",
+          "sha256": "479b583c5b1c4decaee4ea5e2774bb1561aa57d79a965dbed694535b9808dc2c"
         },
         "win32-x64": {
-          "fileName": "python-xpack-3.10.14-4-win32-x64.zip",
-          "sha256": "f51a7c0f098e64eb3067ba15b18342bd0506a6dc227486a2ca175fac2dfdf9a0"
+          "fileName": "python-xpack-3.10.14-5-win32-x64.zip",
+          "sha256": "e42d4d9b7442b1b079eeecbe936a5307293003d502f84bc445dec9384cbdb6ea"
         }
       }
     },
