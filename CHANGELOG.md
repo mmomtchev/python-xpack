@@ -1,3 +1,6 @@
+# 3.10.14-5 2024-07-02
+  * Fix and test all compression modules on all platforms (`lzma` was missing on macOS arm64)
+
 # 3.10.14-4 2024-07-01
   * Fix and test all compression modules on all platforms (`lzma` was missing on macOS arm64)
   * Drop macOS 11 support
