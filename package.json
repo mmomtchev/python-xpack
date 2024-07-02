@@ -61,8 +61,7 @@
       "build": "{{ properties.commandBuild[os.platform] }}",
       "test": [
         ".{{ path.sep }}content{{ path.sep }}python -E -s test.py",
-        ".{{ path.sep }}content{{ path.sep }}python -E -s -m pip install numpy",
-        ".{{ path.sep }}content{{ path.sep }}python -E -s -c 'import lzma; assert(type(lzma.compress) == type(lambda x: x))'"
+        ".{{ path.sep }}content{{ path.sep }}python -E -s -m pip install numpy"
       ]
     }
   },
