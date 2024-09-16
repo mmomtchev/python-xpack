@@ -50,7 +50,7 @@
       "python3": "./.content/python"
     },
     "properties": {
-      "versionPython": "3.10.14",
+      "versionPython": "3.10.15",
       "commandBuild": {
         "win32": "build_python.cmd {{ properties.versionPython }}",
         "linux": "bash build_python.sh {{ properties.versionPython }}",
