@@ -1,3 +1,6 @@
+# 3.10.15-1 2024-09-16
+  * Fix and test sqlite3 (`libsqlite3.so` was missing on a minimal Linux installation)
+
 # 3.10.14-5 2024-07-02
   * Fix and test all compression modules on all platforms (`lzma` was missing on macOS arm64)
 
