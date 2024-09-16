@@ -1,4 +1,5 @@
 # 3.10.15-1 2024-09-16
+  * Upgrade Python to 3.10.15
   * Fix and test sqlite3 (`libsqlite3.so` was missing on a minimal Linux installation)
 
 # 3.10.14-5 2024-07-02
