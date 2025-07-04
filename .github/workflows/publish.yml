@@ -15,10 +15,12 @@ jobs:
       fail-fast: false
       matrix:
         platform:
-          - ubuntu-20.04
-          - macos-12
+          - ubuntu-22.04
+          - ubuntu-22.04-arm
+          - macos-13
           - macos-14
-          - windows-2019
+          - windows-2022
+          - wundows-11-arm
 
     steps:
       - uses: actions/setup-node@v4
