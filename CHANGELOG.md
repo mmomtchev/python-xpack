@@ -1,3 +1,7 @@
+# 3.12.6-1 2025-01-20
+  * Update Python to 3.12.6 with built-in root certificates
+  * Drop macOS 12 support
+
 # 3.10.14-4 2024-07-01
   * Fix and test all compression modules on all platforms (`lzma` was missing on macOS arm64)
   * Drop macOS 11 support

@@ -1,6 +1,6 @@
 {
   "name": "@mmomtchev/python-xpack",
-  "version": "3.12.3-2",
+  "version": "3.12.6-1",
   "description": "A binary xPack with a standalone Python distribution",
   "scripts": {
     "postversion": "git push && git push --tags && node ./publish.mjs"
@@ -50,7 +50,7 @@
       "python3": "./.content/python"
     },
     "properties": {
-      "versionPython": "3.12.3",
+      "versionPython": "3.12.6",
       "commandBuild": {
         "win32": "build_python.cmd {{ properties.versionPython }}",
         "linux": "bash build_python.sh {{ properties.versionPython }}",
