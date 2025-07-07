@@ -1,6 +1,6 @@
 {
   "name": "@mmomtchev/python-xpack",
-  "version": "3.10.15-1",
+  "version": "3.12.11-1",
   "description": "A binary xPack with a standalone Python distribution",
   "scripts": {
     "postversion": "git push && git push --tags && node ./publish.mjs"
@@ -24,24 +24,32 @@
     "binaries": {
       "destination": "./.content",
       "rootUrl": "https://github.com/mmomtchev/python-xpack/releases/download",
-      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v3.10.15-1",
+      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v3.12.11-1",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "python-xpack-3.10.15-1-darwin-arm64.tar.gz",
-          "sha256": "0b9232dd6c04596d2354cd9274970771b15131d5f1b8a7b6dfc29de064a0efe0"
+          "fileName": "python-xpack-3.12.11-1-darwin-arm64.tar.gz",
+          "sha256": "6aaff4e2e93739832b6e53cc9c127b16306daba3810a314a448a0a32612389df"
         },
         "darwin-x64": {
-          "fileName": "python-xpack-3.10.15-1-darwin-x64.tar.gz",
-          "sha256": "4bcf4e2730080ae34f09f1fac8268c2fc5867574566be7871a494a43390b8518"
+          "fileName": "python-xpack-3.12.11-1-darwin-x64.tar.gz",
+          "sha256": "24051498396b62f126f991d2dccf68280e3da13c3ef12818ae3e9719ed860a21"
         },
         "linux-x64": {
-          "fileName": "python-xpack-3.10.15-1-linux-x64.tar.gz",
-          "sha256": "47efc802656000f19505172f8f89dd7f76bbc7e7a8b221c1772a8e4aa5874fc9"
+          "fileName": "python-xpack-3.12.11-1-linux-x64.tar.gz",
+          "sha256": "246af24d5f2cb629a01617a7d7dfbcfb55cd31c672da9881b9e46b89c4b6cf6a"
         },
         "win32-x64": {
-          "fileName": "python-xpack-3.10.15-1-win32-x64.zip",
-          "sha256": "32de0b9ab1e5222d0533d057bec43a5db7996a146ffce1a79a512d876cd68246"
+          "fileName": "python-xpack-3.12.11-1-win32-x64.zip",
+          "sha256": "46bf9efce6322c9c8c3dcacf4a132d0807465f633ba4e54926d3bfe62b6582b4"
+        },
+        "linux-arm64": {
+          "fileName": "python-xpack-3.12.11-1-linux-arm64.tar.gz",
+          "sha256": "33ec5f192a4f2908278d3defd68cb9dee39112eac92dcb371f10f7e1b2fbce2d"
+        },
+        "win32-arm64": {
+          "fileName": "python-xpack-3.12.11-1-win32-arm64.zip",
+          "sha256": "237011b37d6c4de417284e0f4dcc1f95892e1c0fecb168fa896946303a29b38f"
         }
       }
     },
