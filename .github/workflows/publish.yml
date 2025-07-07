@@ -15,13 +15,18 @@ jobs:
       fail-fast: false
       matrix:
         platform:
-          - ubuntu-20.04
-          - macos-11
+          - ubuntu-22.04
+          - ubuntu-22.04-arm
+          - macos-13
           - macos-14
-          - windows-2019
+          - windows-2022
+          - wundows-11-arm
 
     steps:
       - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
       - uses: actions/checkout@v4
         with:
           submodules: true
@@ -38,6 +43,17 @@ jobs:
           path: ${{ github.workspace }}/dist
           key: python-dist
           enableCrossOsArchive: true
+      - name: Install conan
+        uses: turtlebrowser/get-conan@main
+      - name: Get conan home
+        id: conan_home
+        shell: bash
+        run: echo CONAN_HOME=`conan config home` >> "$GITHUB_OUTPUT"
+      - name: Cache conan artifacts
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.conan_home.outputs.CONAN_HOME }}
+          key: ${{ runner.os }}-${{ runner.arch }}
       - run: npm install
       - run: npx xpm run build
       - name: Test

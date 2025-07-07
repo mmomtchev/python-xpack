@@ -1,3 +1,14 @@
+# 3.12.11-1
+  * Add Windows arm64 and Linux arm64 binaries
+  * Fix the `dbm` module depending on Homebrew libraries on macOS Intel
+
+# 3.10.15-1 2024-09-16
+  * Upgrade Python to 3.10.15
+  * Fix and test sqlite3 (`libsqlite3.so` was missing on a minimal Linux installation)
+
+# 3.10.14-5 2024-07-02
+  * Fix and test all compression modules on all platforms (`lzma` was missing on macOS arm64)
+
 # 3.10.14-4 2024-07-01
   * Fix and test all compression modules on all platforms (`lzma` was missing on macOS arm64)
   * Drop macOS 11 support

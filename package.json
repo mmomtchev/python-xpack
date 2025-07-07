@@ -1,6 +1,6 @@
 {
   "name": "@mmomtchev/python-xpack",
-  "version": "3.12.3-2",
+  "version": "3.10.15-1",
   "description": "A binary xPack with a standalone Python distribution",
   "scripts": {
     "postversion": "git push && git push --tags && node ./publish.mjs"
@@ -24,24 +24,24 @@
     "binaries": {
       "destination": "./.content",
       "rootUrl": "https://github.com/mmomtchev/python-xpack/releases/download",
-      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v3.12.3-2",
+      "baseUrl": "https://github.com/mmomtchev/python-xpack/releases/download/v3.10.15-1",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "python-xpack-3.12.3-2-darwin-arm64.tar.gz",
-          "sha256": "86fc556f6d57e5579d2bf557fac6b5bb92e64793b9a7b0f0714aea1846cab125"
+          "fileName": "python-xpack-3.10.15-1-darwin-arm64.tar.gz",
+          "sha256": "0b9232dd6c04596d2354cd9274970771b15131d5f1b8a7b6dfc29de064a0efe0"
         },
         "darwin-x64": {
-          "fileName": "python-xpack-3.12.3-2-darwin-x64.tar.gz",
-          "sha256": "bfc17562496c8b4c62435b4e3aae5a7ae9af9844a7fc8e5f413140a23ada6014"
+          "fileName": "python-xpack-3.10.15-1-darwin-x64.tar.gz",
+          "sha256": "4bcf4e2730080ae34f09f1fac8268c2fc5867574566be7871a494a43390b8518"
         },
         "linux-x64": {
-          "fileName": "python-xpack-3.12.3-2-linux-x64.tar.gz",
-          "sha256": "731d697aadb706087e8f3dc2379af3bbb1a71081fc3de4e272aa7fefaeb23f10"
+          "fileName": "python-xpack-3.10.15-1-linux-x64.tar.gz",
+          "sha256": "47efc802656000f19505172f8f89dd7f76bbc7e7a8b221c1772a8e4aa5874fc9"
         },
         "win32-x64": {
-          "fileName": "python-xpack-3.12.3-2-win32-x64.zip",
-          "sha256": "8fb185d7450f3f97d278402ac48602bb3d328b57bffcdcd82794333b6dfbc34e"
+          "fileName": "python-xpack-3.10.15-1-win32-x64.zip",
+          "sha256": "32de0b9ab1e5222d0533d057bec43a5db7996a146ffce1a79a512d876cd68246"
         }
       }
     },
@@ -50,7 +50,7 @@
       "python3": "./.content/python"
     },
     "properties": {
-      "versionPython": "3.12.3",
+      "versionPython": "3.12.11",
       "commandBuild": {
         "win32": "build_python.cmd {{ properties.versionPython }}",
         "linux": "bash build_python.sh {{ properties.versionPython }}",
