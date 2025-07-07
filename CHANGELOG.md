@@ -1,3 +1,6 @@
+# 3.12.11-2 2025-07-09
+  * On macOS, look for the system root certificates in `/etc/ssl` by default
+
 # 3.12.11-1 2025-07-09
   * Add Windows arm64 and Linux arm64 binaries
   * Fix the `dbm` module depending on Homebrew libraries on macOS Intel
