@@ -1,4 +1,4 @@
-# 3.12.11-1
+# 3.12.11-1 2025-07-09
   * Add Windows arm64 and Linux arm64 binaries
   * Fix the `dbm` module depending on Homebrew libraries on macOS Intel
 
