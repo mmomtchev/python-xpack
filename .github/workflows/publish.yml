@@ -20,7 +20,7 @@ jobs:
           - macos-13
           - macos-14
           - windows-2022
-          - wundows-11-arm
+          - windows-11-arm
 
     steps:
       - uses: actions/setup-node@v4
