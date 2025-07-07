@@ -1,5 +1,6 @@
-#
+# 3.12.11-1
   * Add Windows arm64 and Linux arm64 binaries
+  * Fix the `dbm` module depending on Homebrew libraries on macOS Intel
 
 # 3.10.15-1 2024-09-16
   * Upgrade Python to 3.10.15
