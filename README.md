@@ -19,3 +19,5 @@ If you get SSL certificate validation problems on macOS, try pointing OpenSSL to
 ```shell
 export SSL_CERT_FILE=/etc/ssl/cert.pem
 ```
+
+All built-in Python modules should be fully functional on all OS except the `tkinter` module (Python GUI) which is currently considered out-of-scope.
