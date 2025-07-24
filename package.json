@@ -63,10 +63,18 @@
         "win32": "build_python.cmd {{ properties.versionPython }}",
         "linux": "bash build_python.sh {{ properties.versionPython }}",
         "darwin": "bash build_python.sh {{ properties.versionPython }}"
+      },
+      "commandPostInstall": {
+        "win32": "cl wrappers\\wrapper.c wrappers\\wrapper.res /Fe:content\\bin\\python.exe /link",
+        "linux": "true",
+        "darwin": "true"
       }
     },
     "actions": {
-      "build": "{{ properties.commandBuild[os.platform] }}",
+      "build": [
+        "{{ properties.commandBuild[os.platform] }}",
+        "{{ properties.commandPostInstall[os.platform] }}"
+      ],
       "test": [
         ".{{ path.sep }}content{{ path.sep }}python -E -s test.py",
         ".{{ path.sep }}content{{ path.sep }}python -E -s -m pip install numpy"
